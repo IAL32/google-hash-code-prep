@@ -1,12 +1,12 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class LeggereFile {
+public class ReadFile {
 
     public static void main(String[] args) {
 
         try {
-            System.out.print("Inserisci nome file con estensione (ad esempio example-input.int): ");
+            System.out.print("Enter the file name with extension (e.g.: example-input.in): ");
             Scanner input = new Scanner(System.in);
 
             File file = new File(input.nextLine());
