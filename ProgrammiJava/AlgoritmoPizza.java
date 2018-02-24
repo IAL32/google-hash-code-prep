@@ -29,8 +29,6 @@ public class AlgoritmoPizza {
     	System.out.println("numero colonne: " + datiProblema[1]);
     	System.out.println("numero minimo ingredienti per fetta: " + datiProblema[2]);
     	System.out.println("numero massimo celle per fetta: " + datiProblema[3]);
-
-    	
     }
 
     public static void acquisisciDatiInput() {
