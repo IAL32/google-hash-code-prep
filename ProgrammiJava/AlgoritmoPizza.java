@@ -12,24 +12,26 @@ TTTTT
 
 
 SPIEGAZIONE:
-3 -----> righe
-5 -----> colonne
+3 -----> righe pizza
+5 -----> colonne pizza
 1 -----> min X ingredienti per fetta
 6 -----> massimo celle per fetta
+
+T -----> tomato
+M -----> mushroom
 */
 
 
 public class AlgoritmoPizza {
 
 	static int[] datiProblema = new int[4];
-	static Scanner input = new Scanner(System.in);;
+	static Scanner input = new Scanner(System.in);
+	static char[][] cellePizza = new char[1000][1000];
 
     public static void main(String[] args) {
-    	leggiDaFile();
-    	leggiDatiNumerici();
-
-    	System.out.println("-----------------------");
-    	acquisisciDatiInput();
+    	processaFileInput();
+    	leggiDatiNumericiDaFileInput();
+    	leggiCellePizzaDaFileInput();
 
     	int numeroRighe = datiProblema[0];
     	int numeroColonne = datiProblema[1];
@@ -38,13 +40,10 @@ public class AlgoritmoPizza {
 
     	System.out.println("Numero minimo ingredienti per fetta: " + datiProblema[2]);
     	System.out.println("Numero massimo celle per fetta: " + datiProblema[3]);
-    	System.out.println("-----------------------");
-
-    	String[][] cellePizza = new String[numeroRighe][numeroColonne];
 
     }
 
-    public static void leggiDaFile() {
+    public static void processaFileInput() {
     	try {
             File file = new File("example-input.in");
             input = new Scanner(file);
@@ -53,9 +52,21 @@ public class AlgoritmoPizza {
         }
     }
 
-    public static void leggiDatiNumerici() {
+    public static void leggiDatiNumericiDaFileInput() {
     	String stringa = input.nextLine();
         datiProblema = stringArrayToIntArray(stringa);
+    }
+
+    public static void leggiCellePizzaDaFileInput() {
+    	for (int j = 0; input.hasNextLine(); j++) {
+    		String line = input.nextLine();
+    		for (int i = 0; i < line.length(); i++) {
+    			cellePizza[j][i] = line.charAt(i); 
+    		}
+    	}
+    }
+
+    public static void leggiPizza() {
     }
 
     // CONVERTE STRINGA IN ARRAY INTERI. ES: "3 4 5 2" in [3, 4, 5, 2]
