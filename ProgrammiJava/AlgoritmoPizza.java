@@ -22,39 +22,40 @@ SPIEGAZIONE:
 public class AlgoritmoPizza {
 
 	static int[] datiProblema = new int[4];
+	static Scanner input = new Scanner(System.in);;
 
     public static void main(String[] args) {
+    	leggiDaFile();
+    	leggiDatiNumerici();
+
+    	System.out.println("-----------------------");
     	acquisisciDatiInput();
-    	System.out.println("numero righe: " + datiProblema[0]);
-    	System.out.println("numero colonne: " + datiProblema[1]);
-    	System.out.println("numero minimo ingredienti per fetta: " + datiProblema[2]);
-    	System.out.println("numero massimo celle per fetta: " + datiProblema[3]);
+
+    	int numeroRighe = datiProblema[0];
+    	int numeroColonne = datiProblema[1];
+    	System.out.println("Numero righe: " + numeroRighe);
+    	System.out.println("Numero colonne: " + numeroColonne);
+
+    	System.out.println("Numero minimo ingredienti per fetta: " + datiProblema[2]);
+    	System.out.println("Numero massimo celle per fetta: " + datiProblema[3]);
+    	System.out.println("-----------------------");
+
+    	String[][] cellePizza = new String[numeroRighe][numeroColonne];
+
     }
 
-    public static void acquisisciDatiInput() {
+    public static void leggiDaFile() {
     	try {
-            System.out.print("Enter the file name with extension (e.g.: example-input.in): ");
-            Scanner input = new Scanner(System.in);
-            File file = new File(input.nextLine());
+            File file = new File("example-input.in");
             input = new Scanner(file);
-
-            boolean haScansionatoPrimaRiga = false;
-            while (input.hasNextLine()) {
-            	String line = input.nextLine();
-
-            	if (haScansionatoPrimaRiga == false) {
-            		datiProblema = stringArrayToIntArray(line);
-            		haScansionatoPrimaRiga = true;
-            	}
-
-                System.out.println(line);
-            }
-
-            input.close();
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static void leggiDatiNumerici() {
+    	String stringa = input.nextLine();
+        datiProblema = stringArrayToIntArray(stringa);
     }
 
     // CONVERTE STRINGA IN ARRAY INTERI. ES: "3 4 5 2" in [3, 4, 5, 2]
