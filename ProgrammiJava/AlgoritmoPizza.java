@@ -32,6 +32,7 @@ public class AlgoritmoPizza {
     	processaFileInput();
     	leggiDatiNumericiDaFileInput();
     	leggiCellePizzaDaFileInput();
+    	leggiPizza();
 
     	int numeroRighe = datiProblema[0];
     	int numeroColonne = datiProblema[1];
@@ -67,6 +68,12 @@ public class AlgoritmoPizza {
     }
 
     public static void leggiPizza() {
+    	for (int j = 0; j < datiProblema[0]; j++) {
+    		for (int i = 0; i < datiProblema[1]; i++) {
+    			System.out.print(cellePizza[j][i]);
+    		}
+    		System.out.println();
+    	}
     }
 
     // CONVERTE STRINGA IN ARRAY INTERI. ES: "3 4 5 2" in [3, 4, 5, 2]
