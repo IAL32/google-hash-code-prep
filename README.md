@@ -5,4 +5,4 @@
 
 
 ## Extra :)
-* Video evento finale l'anno scorso: https://www.youtube.com/watch?v=tqK-MPy6XCM
+* Video evento finale dell'anno scorso: https://www.youtube.com/watch?v=tqK-MPy6XCM
