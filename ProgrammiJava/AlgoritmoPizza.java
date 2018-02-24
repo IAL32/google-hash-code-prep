@@ -46,6 +46,17 @@ public class AlgoritmoPizza {
 
     }
 
+    // MARK: - ALGORITMO
+    public static void determinaFettePizza() {
+    	for (int j = 0; j < datiProblema[0]; j++) {
+    		for (int i = 0; i < datiProblema[1]; i++) {
+    			// cerca fette nell'intera pizza...
+    		}
+    	}
+    }
+
+    // MARK: - INPUT
+
     public static void processaFileInput() {
     	try {
             File file = new File("big.in");
