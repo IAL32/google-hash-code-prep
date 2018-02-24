@@ -1,4 +1,4 @@
-# google-hash-code-prep
+# Google Hash Code Prep!
 
 ## Link utili
 * Piattaforma dove allenarsi: https://hashcodejudge.withgoogle.com/
