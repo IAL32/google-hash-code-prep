@@ -14,11 +14,13 @@ TTTTT
 SPIEGAZIONE:
 3 -----> righe pizza
 5 -----> colonne pizza
-1 -----> min X ingredienti per fetta
+1 -----> min tot di ciascuno ingrediente per fetta
 6 -----> massimo celle per fetta
 
 T -----> tomato
 M -----> mushroom
+
+GOAL: trovare il numero maggiore di fette possibili (rettangolari).
 */
 
 
@@ -46,7 +48,7 @@ public class AlgoritmoPizza {
 
     public static void processaFileInput() {
     	try {
-            File file = new File("example-input.in");
+            File file = new File("big.in");
             input = new Scanner(file);
         } catch (Exception ex) {
             ex.printStackTrace();
