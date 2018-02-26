@@ -35,6 +35,7 @@ public class AlgoritmoPizza {
     	leggiDatiNumericiDaFileInput();
     	leggiCellePizzaDaFileInput();
     	leggiPizza();
+    	determinaFettePizza();
 
     	int numeroRighe = datiProblema[0];
     	int numeroColonne = datiProblema[1];
@@ -48,11 +49,19 @@ public class AlgoritmoPizza {
 
     // MARK: - ALGORITMO
     public static void determinaFettePizza() {
+    	int numeroMushrooms = 0, numeroPomodori = 0;
     	for (int j = 0; j < datiProblema[0]; j++) {
     		for (int i = 0; i < datiProblema[1]; i++) {
     			// cerca fette nell'intera pizza...
+    			if (cellePizza[j][i] == 'T') {
+    				numeroPomodori++;
+    			} else if (cellePizza[j][i] == 'M') {
+    				numeroMushrooms++;
+    			}
     		}
     	}
+    	System.out.println("numero pomodori: " + numeroPomodori);
+    	System.out.println("numero funghi: " + numeroMushrooms);
     }
 
     // MARK: - INPUT
